@@ -1,3 +1,3 @@
-import SearchActionsTypes from './searchActionsType';
+import * as actionsTypes from './searchActionsType';
 
-export default SearchActionsTypes;
+export default actionsTypes;
