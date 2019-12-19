@@ -1,17 +1,29 @@
-import {
-    countryInfo as initialState
-} from '../store/initialState';
-import SearchActionsTypes from '../actions-types';
+import initialState from '../store/initialState';
+import types from '../actions-types';
 
-export default (state = initialState, {
+const searchReducer = (state = initialState, {
     type,
     payload
 }) => {
     switch (type) {
-        case SearchActionsTypes.SEARCH_START:
+        case types.SEARCH_START:
             return {
                 ...state,
                 countryInfo: payload
             };
+
+        case types.SAVE_INPUT:
+            return {
+                input: payload
+            };
+
+        case types.FETCHDATA:
+            return {
+                countryInfo: payload
+            };
+        default:
+            return state;
     }
 };
+
+export default searchReducer;

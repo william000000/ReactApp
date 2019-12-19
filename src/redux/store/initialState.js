@@ -1,5 +1,6 @@
-module.export = {
-    countryInfo: [{
-
-    }]
+const initialState = {
+    countryInfo: [],
+    input: ''
 };
+
+export default initialState;

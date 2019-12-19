@@ -1,11 +1,13 @@
 import React from "react";
-import MyHome from "./components/MyHome";
-
+import SearchField from "./components/SearchField";
+import OutputField from "./components/OutputField";
 import "./style.css";
+
 const App = () => {
     return (
         <div className="app">
-            <MyHome />
+            <SearchField />
+            <OutputField />
         </div>
     );
 };
