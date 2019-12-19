@@ -18,6 +18,8 @@
     margin-right: 10px;
     padding-left: 20px;
     background-color: #ECECEC;
+    outline: none;
+
 }
 
 .inputField button{
@@ -29,6 +31,7 @@
     background-color: #1EAEFF;
     color: white;
     font-size: 14px;
+    outline: none;
 }
 .outputField{
     width: 70%;
@@ -41,4 +44,9 @@
 .container-output{
     padding: 50px;
     margin-top: -4%;
+}
+.noDataFound{
+    margin-left: 60px;
+    color: rgb(66, 158, 146);
+    font-size: 20px;
 }

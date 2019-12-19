@@ -11,11 +11,18 @@ const searchReducer = (state = initialState, {
                 ...state,
                 countryInfo: payload
             };
+
         case types.SAVE_INPUT:
             return {
                 input: payload
             };
-        default: return state;
+
+        case types.FETCHDATA:
+            return {
+                countryInfo: payload
+            };
+        default:
+            return state;
     }
 };
 
