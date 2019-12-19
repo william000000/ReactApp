@@ -8,7 +8,10 @@ import {
 } from 'redux-devtools-extension';
 import initialState from './initialState';
 import reducers from '../reducers';
+
 const hostname = window.location.hostname;
+
+
 export default createStore(
     reducers,
     initialState,

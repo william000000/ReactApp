@@ -1,8 +1,8 @@
 import actionsTypes from '../actions-types';
 
-export const searchByCity = payload => {
+export const saveInput = payload => {
     return {
-        type: actionsTypes.SEARCH_START,
+        type: actionsTypes.SAVE_INPUT,
         payload
     };
 };
