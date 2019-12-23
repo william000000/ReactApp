@@ -1,34 +1,55 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+const dotenv = require('dotenv');
+const webpack = require('webpack');
 const path = require('path');
-const htmlPlugin = new HtmlWebPackPlugin({
-    template: './src/index.html',
-    filename: './index.html'
-});
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+dotenv.config();
 module.exports = {
-    entry: './src/index.js',
+    mode: "development",
+    entry: path.resolve(__dirname, 'src/index'),
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: '[name].js'
+        path: path.resolve(__dirname, 'dist/'),
+        filename: 'main.js',
+        publicPath: '/'
     },
-    plugins: [htmlPlugin],
     module: {
-        rules: [{
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader'
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "html-loader"
+                    }
+                ]
+            },
+
+            {
+                test: /\.(jpg|png)$/,
+                use: {
+                    loader: 'url-loader'
+                }
             }
-        },
-        {
-            test: /\.s?css$/,
-            use: ['style-loader', 'css-loader', 'sass-loader']
-        }
         ]
     },
-
-    node: {
-        fs: 'empty'
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'public/index.html'
+        })
+    ],
+    devServer: {
+        contentBase: path.resolve(__dirname, 'public/'),
+        historyApiFallback: true,
+        port: 7000
     }
-
 };
-
