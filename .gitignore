@@ -1,4 +1,6 @@
 node_modules/
+coverage/
+.env
 package_lock.json
 .DS_Store
 src/constantVariable.js
