@@ -1,4 +1,5 @@
-import { SPELL_DATA_URL, SPELL_DATA_KEY, SPELL_DATA_HOST } from '../../constantVariable';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const spellActions = textToConvert => {
     var audioCtx = new AudioContext();
@@ -6,11 +7,11 @@ const spellActions = textToConvert => {
     const options = {
         method: "GET",
         headers: {
-            ["x-rapidapi-host"]: `${SPELL_DATA_HOST}`,
-            ["x-rapidapi-key"]: `${SPELL_DATA_KEY}`
+            ["x-rapidapi-host"]: `${process.env.SPELL_DATA_HOST}`,
+            ["x-rapidapi-key"]: `${process.env.SPELL_DATA_KEY}`
         }
     };
-    const URL = `${SPELL_DATA_URL}&src=${textToConvert}&hl=en-us&key=a8512ad7a466442a91e327d383337413`;
+    const URL = `${process.env.SPELL_DATA_URL}&src=${textToConvert}&hl=en-us&key=a8512ad7a466442a91e327d383337413`;
     fetch(URL, options)
         .then(response => {
             const reader = response.body.getReader();

@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 import { saveInput } from '../redux/actions';
 import img from '../images/icon.png';
 import textToSpeech from '../redux/actions/spellAction';
+
 
 class Speech extends Component {
     constructor (props) {
@@ -16,7 +19,9 @@ class Speech extends Component {
      render () {
          return (
              <div className="speech-container">
-                 <button onClick={() => textToSpeech(this.props.searchReducer.input)}><img src={img} alt="photo" /></button>
+                 <button onClick={() => textToSpeech(this.props.searchReducer.input)}>
+                     <FontAwesomeIcon icon={faVolumeUp} className="myIcon"/>
+                 </button>
              </div>
          );
      }

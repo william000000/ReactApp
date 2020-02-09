@@ -1,6 +1,8 @@
 const initialState = {
     countryInfo: [],
-    input: ''
+    input: null,
+    error: null,
+    spinnerLoader: false
 };
 
 export default initialState;

@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const fs = require('fs');
 
 dotenv.config();
 module.exports = {
@@ -55,9 +56,12 @@ module.exports = {
             defaults: false
         })
     ],
+    node: {
+        fs: 'empty'
+    },
     devServer: {
         contentBase: path.resolve(__dirname, 'public/'),
         historyApiFallback: true,
-        port: 7000
+        port: 9000
     }
 };
