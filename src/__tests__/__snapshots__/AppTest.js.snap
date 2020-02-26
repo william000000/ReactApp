@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Expect to search should search successfully 1`] = `ReactWrapper {}`;
+
+exports[`Expect to spell the word should  spell the word successfully 1`] = `ReactWrapper {}`;
+
+exports[`Expect to view output should view all city info successfully 1`] = `ReactWrapper {}`;
+
+exports[`Should test the spinner renders without crashing 1`] = `ShallowWrapper {}`;
+
 exports[`Test with Enzyme Renders 1`] = `ShallowWrapper {}`;

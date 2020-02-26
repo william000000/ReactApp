@@ -6,20 +6,26 @@ const searchReducer = (state = initialState, {
     payload
 }) => {
     switch (type) {
-        case types.SEARCH_START:
-            return {
-                ...state,
-                countryInfo: payload
-            };
-
         case types.SAVE_INPUT:
             return {
+                ...state,
                 input: payload
             };
 
         case types.FETCHDATA:
             return {
+                ...state,
                 countryInfo: payload
+            };
+        case types.ERROR_HANDLER:
+            return {
+                ...state,
+                error: payload
+            };
+        case types.SPINNER:
+            return {
+                ...state,
+                spinnerLoader: payload
             };
         default:
             return state;

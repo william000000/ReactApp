@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">11.11% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>1/9</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">11.11% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/9</span>
+        <span class='fraction'>3/3</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -76,32 +76,14 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -119,57 +101,48 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { searchByCity, saveInput } from '../redux/actions';
+import { searchByCity } from '../redux/actions';
 &nbsp;
-class OutputField extends Component {
-<span class="fstat-no" title="function not covered" >    co</span>nstructor (props) {
-<span class="cstat-no" title="statement not covered" >        super(props);</span>
+export class OutputField extends Component {
+    render () {
+        return (
+            &lt;div className="container-output"&gt;
+                &lt;h2&gt;City Details&lt;/h2&gt;
+                &lt;div className="outputField"&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;label&gt;Country Name:&lt;/label&gt; {this.props.searchReducer.countryInfo.name}&lt;/li&gt;
+                        &lt;li&gt;&lt;label&gt;Timezone:&lt;/label&gt; {this.props.searchReducer.countryInfo.timezones}&lt;/li&gt;
+                        &lt;li&gt;&lt;label&gt;Area:&lt;/label&gt; {this.props.searchReducer.countryInfo.area}&lt;/li&gt;
+                        &lt;li&gt;&lt;label&gt;Population: &lt;/label&gt;{this.props.searchReducer.countryInfo.population}&lt;/li&gt;
+                        &lt;li&gt;&lt;label&gt;Calling code:&lt;/label&gt; {this.props.searchReducer.countryInfo.callingCodes}&lt;/li&gt;
+                        &lt;li&gt;&lt;label&gt;Demonym:&lt;/label&gt; {this.props.searchReducer.countryInfo.timezones}&lt;/li&gt;
+                        &lt;li&gt;&lt;label&gt;Region: &lt;/label&gt;{this.props.searchReducer.countryInfo.region}&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        );
     }
-     handleChange = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >         e.preventDefault();</span>
-<span class="cstat-no" title="statement not covered" >         this.props.saveInput(e.target.value);</span>
-     }
-<span class="fstat-no" title="function not covered" >     re</span>nder () {
-<span class="cstat-no" title="statement not covered" >         if (this.props.searchReducer.countryInfo === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >             return &lt;div className="noDataFound"&gt;No Data Found&lt;/div&gt;;</span>
-         }
-<span class="cstat-no" title="statement not covered" >         return (</span>
-             &lt;div className="container-output"&gt;
-                 &lt;h2&gt;City Details&lt;/h2&gt;
-                 &lt;div className="outputField"&gt;
-                     &lt;ul&gt;
-                         &lt;li&gt;Timezone: {this.props.searchReducer.countryInfo.timezones}&lt;/li&gt;
-                         &lt;li&gt;Area: {this.props.searchReducer.countryInfo.area}&lt;/li&gt;
-                         &lt;li&gt;Population: {this.props.searchReducer.countryInfo.population}&lt;/li&gt;
-                         &lt;li&gt;Calling code: {this.props.searchReducer.countryInfo.callingCodes}&lt;/li&gt;
-                         &lt;li&gt;Demonym: {this.props.searchReducer.countryInfo.timezones}&lt;/li&gt;
-                         &lt;li&gt;Region: {this.props.searchReducer.countryInfo.region}&lt;/li&gt;
-                     &lt;/ul&gt;
-                 &lt;/div&gt;
-             &lt;/div&gt;
-         );
-     }
 }
-const mapStateToProps = <span class="fstat-no" title="function not covered" >st</span>ate =&gt; {
-<span class="cstat-no" title="statement not covered" >    return state;</span>
+const mapStateToProps = state =&gt; {
+    return state;
 };
 &nbsp;
 &nbsp;
-export default connect(mapStateToProps, { searchByCity, saveInput })(OutputField);
+export default connect(mapStateToProps, { searchByCity })(OutputField);
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Feb 09 2020 19:09:26 GMT+0200 (Central Africa Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 26 2020 16:34:52 GMT+0200 (Central Africa Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

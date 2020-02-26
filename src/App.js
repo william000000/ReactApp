@@ -1,16 +1,15 @@
 import React from "react";
 import SearchField from "./components/SearchField";
-import OutputField from "./components/OutputField";
-import Speech from "./components/SpeechVoice";
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import "./style.css";
 
 const App = () => {
     return (
-        <div className="app">
-            <SearchField />
-            <Speech />
-            <OutputField />
-        </div>
+        <Router>
+            <Switch>
+                <Route exact path="/" component={SearchField}/>
+            </Switch>
+        </Router>
     );
 };
 export default App;

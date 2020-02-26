@@ -1,7 +1,17 @@
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-image: url('./images/uu.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .search-container {
     padding: 50px;
     margin: auto;
     height: 150px;
+    padding-left: 20%;
 
 }
 .search-container h1{
@@ -10,6 +20,7 @@
     margin-bottom: 50px;
     margin-top: 10px;
 }
+
 .inputField input{
     width: 60%;
     border: 1px solid #1EAEFF;
@@ -19,6 +30,8 @@
     padding-left: 20px;
     background-color: #ECECEC;
     outline: none;
+    font-size: 15px;
+    color: black;
 
 }
 
@@ -28,43 +41,133 @@
     border-radius: 16px;
     margin: 5px;
     width: 10%;
-    background-color: #1EAEFF;
+    background-color: rgb(8, 38, 43);
     color: white;
     font-size: 14px;
     outline: none;
+
+}
+.inputField button{
+    cursor: pointer;
+    background-color: rgb(8, 38, 43);
 }
 .outputField{
     width: 70%;
-    background: #ECECEC;
+    background: rgb(207, 207, 207);
     border-radius: 5px;
     padding: 40px 20px;
     line-height: 50px;
 
-
+}
+.outputField ul li label{
+    color: white;
 }
 
 .container-output{
     padding: 50px;
     margin-top: -5%;
+    padding-left: 20%;
+    color: white;
+  
 }
-.noDataFound{
-    margin-left: 60px;
-    color: rgb(66, 158, 146);
-    font-size: 20px;
+.container-output ul{
+    border-radius: 8px;
+    color: rgb(59, 149, 201);
+    margin: auto;
+    width: 80%;
+    list-style: none;
+    background-color: rgb(8, 38, 43);
+    box-shadow: 2px 1px 1px 1px black;
 }
+
+.loader {
+    text-align: center;
+    margin-top: 300px;
+  }
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(201, 193, 193, 0.404);
+    z-index: 2;
+    cursor: pointer;
+  } 
+  
+
+
 .speech-container{
     width: 1%;
     padding: 10px;
-    margin-left: 50px;
-    margin-bottom: 30px;
+    padding-left: 23%;
+    margin-bottom: 3px;
+}
+.myIcon{
+    color: white;
+    padding: 6px;
 }
 
-.speech-container button img {
-    width: 20px;
-    height: 20px;
-}
 .speech-container button{
+    border: 1px solid  rgb(59, 149, 201);
     border-radius: 2px;
     margin-top: -40px;
     position: absolute;
+}
+.speech-container button{
+    cursor: pointer;
+    background-color: rgb(8, 38, 43);
+}
+
+.Toastify{
+    background-color: rgb(90, 90, 90);
+    padding: 0;
+    color: white;
+    float: right;
+    margin-top: -53%;
+    border-radius: 4px;
+    padding: 7px;
+    border: 1px solid  rgb(91, 116, 131);
+    text-align: center;
+}
+
+@media only screen and (max-width: 468px) {
+    .Toastify{
+     margin-top: -860px;
+     width: 94%;
+     height: 50px;
+     
+    }
+ 
+    body{
+        display: flex;
+        width: 100%;
+    }
+    .inputField button{
+        width: 30%;
+        margin-right: -10%;
+    }
+    .speech-container button{
+        margin-top: 4px;
+    }
+    .outputField{
+        width: 130%;
+        margin-left: -50px;
+    }
+    .outputField ul{
+        width: 90%;
+        margin-left: -10px;
+    }
+  }
+
+.Toastify div button{
+    border: 1px solid  rgb(91, 116, 131);
+    font-size: 18px;
+    float: right;
+    margin-top: 10px;
+}
+.Toastify div button{
+    cursor: pointer;
 }
